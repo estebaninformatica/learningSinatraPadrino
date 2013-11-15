@@ -1,0 +1,48 @@
+<% error = @building.errors.include?(:title) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :title, :class => 'col-sm-1 col-sm-1 control-label' %>
+  <div class='col-sm-10'>
+    <%= f.text_field :title, :class => 'form-control input-xlarge input-with-feedback', :autofocus => true %>
+    <span class='help-inline'><%= error ? f.error_message_on(:title) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @building.errors.include?(:type_building_id) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :type_building_id, :class => 'col-sm-1 control-label' %>
+  <div class='col-sm-4'>  
+    <%=f.select(:type_building_id, :collection => TypeBuilding.all, :fields => [:name, :id], :class => 'form-control input-xsmall input-with-feedback')%>
+    <span class='help-inline'><%= error ? f.error_message_on(:type_building_id) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @building.errors.include?(:body) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :body, :class => 'col-sm-1 control-label' %>
+  <div class='col-sm-10'>
+    <%= f.text_area :body, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:body) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @building.errors.include?(:direction) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :direction, :class => 'col-sm-1 control-label' %>
+  <div class='col-sm-10'>
+    <%= f.text_field :direction, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:direction) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @building.errors.include?(:number) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :number, :class => 'col-sm-1 control-label' %>
+  <div class='col-sm-10'>
+    <%= f.text_field :number, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:number) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+
+<div class="form-actions">
+  <%= f.submit pat(:save), :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue' %>
+  &nbsp;
+  <%= link_to pat(:cancel), url(:buildings, :index), :class => 'btn btn-default' %>
+</div>

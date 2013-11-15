@@ -34,6 +34,8 @@ module AppBuildings
     end
 
     access_control.roles_for :admin do |role|
+    role.project_module :buildings, '/buildings'
+    role.project_module :type_buildings, '/type_buildings'
     role.project_module :accounts, '/accounts'
     end
 

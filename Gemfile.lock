@@ -15,11 +15,16 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     erubis (2.7.0)
     http_router (0.11.0)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     i18n (0.6.5)
+    json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -82,6 +87,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (>= 3.1)
   bcrypt-ruby
+  carrierwave
   erubis (~> 2.7.0)
   minitest (~> 2.6.0)
   mysql2
